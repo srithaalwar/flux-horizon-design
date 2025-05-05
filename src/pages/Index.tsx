@@ -1,12 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from "react";
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import ServicesSection from "@/components/ServicesSection";
+import PortfolioSection from "@/components/PortfolioSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import ContactSection from "@/components/ContactSection";
+import CTASection from "@/components/CTASection";
 
 const Index = () => {
+  // Set page title and meta tags for SEO
+  useEffect(() => {
+    document.title = "CompanyName - Professional Digital Services";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "CompanyName provides professional web development, app development, UI/UX design, and digital marketing services for businesses of all sizes.");
+    }
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="flex flex-col min-h-screen">
+      <NavBar />
+      
+      <main className="flex-grow">
+        <HeroSection />
+        <ServicesSection />
+        <PortfolioSection />
+        <TestimonialsSection />
+        <ContactSection />
+        <CTASection />
+      </main>
+      
+      <Footer />
     </div>
   );
 };
