@@ -25,6 +25,7 @@ const Index = () => {
       
       <main className="flex-grow">
         <HeroSection />
+        {/* Show condensed versions of each section on the homepage */}
         <ServicesSection />
         <PortfolioSection />
         <TestimonialsSection />
